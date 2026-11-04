@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T22:50:43Z",
+  "updated": "2026-11-04T23:11:56Z",
   "source": "EVE Tycoon regional market stats",
   "method": "sell = average price of the cheapest 5% of sell-order volume (sellAvgFivePercent); min = lowest sell order; null = no sell orders in the region",
   "hubs": {
@@ -24,9 +24,9 @@
           "orders": 40
         },
         "Fullerite-C60": {
-          "sell": 5762.34,
+          "sell": 5765.15,
           "min": 4621,
-          "orders": 16
+          "orders": 17
         },
         "Fullerite-C70": {
           "sell": 11890,
@@ -49,9 +49,9 @@
           "orders": 18
         },
         "Fullerite-C540": {
-          "sell": 57648.53,
-          "min": 56000,
-          "orders": 26
+          "sell": 58400.45,
+          "min": 56070,
+          "orders": 25
         },
         "Arkonor": {
           "sell": 3223.91,
@@ -94,9 +94,9 @@
           "orders": 17
         },
         "Kernite": {
-          "sell": 516.74,
+          "sell": 516.04,
           "min": 500,
-          "orders": 92
+          "orders": 91
         },
         "Mercoxit": {
           "sell": 26675.22,
@@ -109,7 +109,7 @@
           "orders": 66
         },
         "Pyroxeres": {
-          "sell": 35.34,
+          "sell": 35.31,
           "min": 35,
           "orders": 18
         },
@@ -148,17 +148,17 @@
         "Fullerite-C70": {
           "sell": 7800,
           "min": 7800,
-          "orders": 7
+          "orders": 8
         },
         "Fullerite-C72": {
-          "sell": 6746.16,
-          "min": 6741,
-          "orders": 20
+          "sell": 6744.44,
+          "min": 6740,
+          "orders": 21
         },
         "Fullerite-C84": {
-          "sell": 9470.95,
+          "sell": 9447.02,
           "min": 8600,
-          "orders": 15
+          "orders": 16
         },
         "Fullerite-C320": {
           "sell": 37977.43,
