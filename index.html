@@ -26,6 +26,8 @@
     --gas-dim:rgba(167,139,224,.14);
     --ore:#D4AC3B;
     --ore-dim:rgba(212,172,59,.14);
+    --shattered:#E5799E;
+    --shattered-dim:rgba(229,121,158,.14);
 
     --sleeper:#63E6C0;
     --radius:6px;
@@ -339,6 +341,9 @@
     color:var(--text-dim);
   }
   .callout.show{display:block;}
+  #shCallout{border-left-color:var(--shattered);}
+  .verify-flag{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--shattered);border:1px solid var(--shattered);border-radius:3px;padding:0 4px;margin-left:4px;}
+  .no-price-note{font-size:12px;color:var(--text-faint);margin:0 0 12px;}
   .callout b{color:var(--text);}
 
   /* ---------- main grid ---------- */
@@ -583,8 +588,8 @@
       </svg>
     </div>
     <h1>Wormhole Site Field Guide</h1>
-    <p class="lede">Combat anomalies, hacking sites, gas clouds and ore deposits found across C1–C6 wormhole space. Spawns, triggers and yields at a glance.</p>
-    <p class="stat-line"><strong id="totalCount">43</strong> sites indexed · C1 – C6</p>
+    <p class="lede">Combat anomalies, hacking sites, gas clouds, ore deposits and shattered-system fields found across C1–C6 wormhole space. Spawns, triggers and yields at a glance.</p>
+    <p class="stat-line"><strong id="totalCount">69</strong> sites indexed · C1 – C6 and shattered</p>
     <p class="price-stamp" id="priceStamp"><span id="hubLabel">Jita</span> sell prices · <b id="priceDate">loading…</b></p>
     <div class="legend">
       <span class="legend-item"><b>WEB</b> Webifier</span>
@@ -602,6 +607,7 @@
       <button class="tab" data-cat="datarelic" style="--tab-accent:#4FAFCF">Data &amp; relic sites</button>
       <button class="tab" data-cat="gas" style="--tab-accent:#A78BE0">Gas sites</button>
       <button class="tab" data-cat="ore" style="--tab-accent:#D4AC3B">Ore sites</button>
+      <button class="tab" data-cat="shattered" style="--tab-accent:#E5799E">Shattered sites</button>
     </div>
     <div class="filter-row">
       <div class="chip-group" id="classChips"></div>
@@ -638,6 +644,7 @@
 
 <main class="wrap">
   <p class="callout" id="drCallout"><b>Threat note:</b> sites named <b>Forgotten</b> or <b>Unsecured</b> spawn Sleeper NPCs. Sites named after a known pirate faction (Guristas, Sansha, Serpentis, etc.) are Sleeper-free.</p>
+  <p class="callout" id="shCallout" style="--callout-accent:var(--shattered)"><b>Shattered wormholes only:</b> these sites spawn in shattered wormhole systems (destroyed planets). You will not find them in other wormholes. Amounts are approximate and the sites last 3–5 days once activated. No capital escalation is possible.</p>
   <p class="price-note" id="priceNote"><b>How values work:</b> estimated value is units × <span id="hubNote">Jita</span> sell price for the raw material, before taxes, hauling or reprocessing. Prices refresh daily and are estimates only. A <span class="star">*</span> marks a price based on very few orders or far from the other hubs, so treat it with caution.</p>
   <div id="grid"></div>
 </main>
@@ -1780,6 +1787,36 @@ const oreSites = [
   ], guards:[{name:"Awakened Patroller", qty:2, hull:"Cruiser"}]}
 ];
 
+const shatteredSites = [
+  {classRange:"Shattered", group:"Shattered systems only", kind:"Ore", name:"Shattered Debris Field", ores:[
+    {ore:"Arkonor", qty:4, units:250000, cargo:4000000},
+    {ore:"Bistot", qty:7, units:460000, cargo:7360000},
+    {ore:"Gneiss", qty:3, units:200000, cargo:1000000},
+    {ore:"Kernite (Fiery)", qty:1, units:21344, cargo:25612},
+    {ore:"Kernite (Luminous)", qty:7, units:159218, cargo:191058},
+    {ore:"Kernite", qty:10, units:203168, cargo:243798},
+    {ore:"Pyroxeres (Viscous)", qty:3, units:236952, cargo:71084},
+    {ore:"Pyroxeres (Solid)", qty:3, units:230394, cargo:69117},
+    {ore:"Pyroxeres", qty:16, units:1163934, cargo:349174}
+  ], guards:[
+    {name:"Emergent Defender", qty:2, hull:"Frigate", tag:"WEB"},
+    {name:"Awakened Defender", qty:1, hull:"Cruiser"}
+  ]},
+  {classRange:"Shattered", group:"Shattered systems only", kind:"Ice", minOrders:3, name:"Shattered Ice Field", ores:[
+    {ore:"Thick Blue Ice", qty:22, units:6868, cargo:6868000},
+    {ore:"Enriched Clear Icicle", qty:22, units:6868, cargo:6868000},
+    {ore:"Dark Glitter", qty:27, units:10802, cargo:10802000, verify:true},
+    {ore:"Gelidus", qty:23, units:2756, cargo:2756000},
+    {ore:"Smooth Glacial Mass", qty:21, units:6456, cargo:6456000},
+    {ore:"Glare Crust", qty:45, units:4080, cargo:2040000},
+    {ore:"Krystallos", qty:26, units:2620, cargo:2620000, verify:true},
+    {ore:"Pristine White Glaze", qty:20, units:6200, cargo:6200000}
+  ], guards:[
+    {name:"Emergent Defender", qty:2, hull:"Frigate", tag:"WEB"},
+    {name:"Awakened Defender", qty:1, hull:"Cruiser"}
+  ]}
+];
+
 /* ---------------- search index ---------------- */
 function shipText(s){ return [s.name, s.hull, s.tag||''].join(' '); }
 function buildSearch(site){
@@ -1791,7 +1828,8 @@ function buildSearch(site){
   if(site.ores) site.ores.forEach(o=>parts.push(o.ore));
   return parts.join(' ').toLowerCase();
 }
-[...combatSites, ...dataRelicSites, ...gasSites, ...oreSites].forEach(s => s._search = buildSearch(s));
+[...combatSites, ...dataRelicSites, ...gasSites, ...oreSites, ...shatteredSites].forEach(s => s._search = buildSearch(s));
+document.getElementById('totalCount').textContent = combatSites.length + dataRelicSites.length + gasSites.length + oreSites.length + shatteredSites.length;
 
 /* ---------------- render helpers ---------------- */
 function shipRow(s){
@@ -1847,6 +1885,18 @@ function fmtIsk(n){
   return Math.round(n).toString();
 }
 
+// Some sites (the shattered ice field) only count prices backed by enough sell orders,
+// because the ice items trade so thinly that a single odd order would swing the estimate.
+function priceUsable(site, name){
+  const p = priceOf(name);
+  if(p===null) return null;
+  if(site.minOrders){
+    const d = hubData(currentHub), it = d && d.items && d.items[name];
+    if(!it || it.orders < site.minOrders) return null;
+  }
+  return p;
+}
+
 // Estimated value of one gas or ore site: units × sell price at the chosen hub.
 function siteValue(site){
   let total = 0, cargo = 0;
@@ -1854,7 +1904,7 @@ function siteValue(site){
   const rows = site.clouds ? site.clouds.map(c=>({name:c.gas, units:c.units}))
                            : site.ores.map(o=>({name:o.ore, units:o.units, cargo:o.cargo}));
   rows.forEach(r=>{
-    const p = priceOf(r.name);
+    const p = priceUsable(site, r.name);
     if(p===null){ missing.push(r.name); return; }
     total += r.units * p;
     if(r.cargo) cargo += r.cargo;
@@ -1869,7 +1919,7 @@ function valueStrip(site){
   return `<div class="value-strip">
     <span class="value-main">≈ ${fmtIsk(v.total)} <small>ISK</small></span>
     ${v.perM3!==null?`<span class="value-sub">${Math.round(v.perM3).toLocaleString('en-US')} ISK per m³</span>`:''}
-    ${v.missing.length?`<span class="value-miss">Not counted: ${v.missing.join(', ')} (no ${hubLabel()} sell listings)</span>`:''}
+    ${v.missing.length?`<span class="value-miss">Not counted: ${v.missing.join(', ')} (${site.minOrders?'too few':'no'} ${hubLabel()} sell ${site.minOrders?'orders':'listings'})</span>`:''}
     ${v.flagged.length?`<span class="value-flag"><span class="star">*</span> Thin or unusual price: ${v.flagged.join(', ')}</span>`:''}
   </div>`;
 }
@@ -1955,6 +2005,30 @@ function oreCard(site){
   </article>`;
 }
 
+function shatteredCard(site){
+  const isIce = site.kind==='Ice';
+  const anyPrice = site.ores.some(o=>priceUsable(site,o.ore)!==null);
+  return `<article class="site-card" style="--accent:var(--shattered);--accent-dim:var(--shattered-dim)">
+    <div class="site-card-head">
+      <span class="class-badge">${site.classRange}</span>
+      <h3>${site.name}</h3>
+      <span class="type-badge">${site.kind}</span>
+    </div>
+    ${anyPrice?valueStrip(site):`<p class="no-price-note">Ice sells too thinly at ${hubLabel()} (very few sell orders) to give a reliable value estimate for this site.</p>`}
+    <div class="ore-table">
+      <div class="ore-table-head priced"><span>${isIce?'Ice':'Ore'}</span><span>Units</span><span>Cargo m³</span><span>Value</span></div>
+      ${site.ores.map(o=>{
+        const p = priceUsable(site, o.ore);
+        return `<div class="ore-row priced"><span>${o.ore}${o.qty>1?` ×${o.qty}`:''}</span><span>${fmt(o.units)}${o.verify?'<span class="verify-flag">verify</span>':''}</span><span>${fmt(o.cargo)}</span>${p===null?`<span class="nodata">${priceOf(o.ore)===null?'no price':'thin market'}</span>`:`<span>${fmtIsk(o.units*p)}${priceFlag(o.ore)?'<span class="star">*</span>':''}</span>`}</div>`;
+      }).join('')}
+    </div>
+    <div class="guard-list">
+      <p class="wave-label">Guards</p>
+      <ul class="ship-list">${site.guards.map(shipRow).join('')}</ul>
+    </div>
+  </article>`;
+}
+
 /* ---------------- state & filtering ---------------- */
 const classList = ["C1","C2","C3","C4","C5","C6"];
 let activeCategory = "combat";
@@ -1988,10 +2062,10 @@ function syncChips(){
 }
 
 function accentFor(cat){
-  return {combat:'#D97354', datarelic:'#4FAFCF', gas:'#A78BE0', ore:'#D4AC3B'}[cat];
+  return {combat:'#D97354', datarelic:'#4FAFCF', gas:'#A78BE0', ore:'#D4AC3B', shattered:'#E5799E'}[cat];
 }
 function accentVarFor(cat){
-  return {combat:'var(--combat)', datarelic:'var(--datarelic)', gas:'var(--gas)', ore:'var(--ore)'}[cat];
+  return {combat:'var(--combat)', datarelic:'var(--datarelic)', gas:'var(--gas)', ore:'var(--ore)', shattered:'var(--shattered)'}[cat];
 }
 
 function classInRange(c, range){
@@ -2007,15 +2081,17 @@ tabsEl.querySelectorAll('.tab').forEach(t=>{
     tabsEl.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active', x===t));
     document.getElementById('typeToggle').classList.toggle('show', activeCategory==='datarelic');
     document.getElementById('drCallout').classList.toggle('show', activeCategory==='datarelic');
-    const priced = activeCategory==='gas' || activeCategory==='ore';
+    document.getElementById('shCallout').classList.toggle('show', activeCategory==='shattered');
+    classChipsEl.style.display = activeCategory==='shattered' ? 'none' : '';
+    const priced = activeCategory==='gas' || activeCategory==='ore' || activeCategory==='shattered';
     document.getElementById('sortWrap').classList.toggle('show', priced);
     document.getElementById('marketWrap').classList.toggle('show', priced);
     const note = document.getElementById('priceNote');
     note.classList.toggle('show', priced);
     note.style.setProperty('--accent-note', accentFor(activeCategory));
     // ISK per m³ only makes sense for ore (gas sites have no cargo figures in the sheet)
-    sortSelect.querySelector('[data-ore-only]').hidden = activeCategory!=='ore';
-    if(activeCategory!=='ore' && sortSelect.value==='perm3') sortSelect.value = 'value';
+    sortSelect.querySelector('[data-ore-only]').hidden = !(activeCategory==='ore' || activeCategory==='shattered');
+    if(!(activeCategory==='ore' || activeCategory==='shattered') && sortSelect.value==='perm3') sortSelect.value = 'value';
     if(!priced) sortSelect.value = 'default';
     syncChips();
     render();
@@ -2064,6 +2140,10 @@ function render(){
     sites = gasSites;
     matchesClass = s => selectedClasses.size===0 || [...selectedClasses].some(c=>classInRange(c, s.classRange));
     groupKey = s => s.classRange;
+  } else if(activeCategory==='shattered'){
+    sites = shatteredSites;
+    matchesClass = () => true;
+    groupKey = s => s.group;
   } else {
     sites = oreSites;
     matchesClass = s => selectedClasses.size===0 || [...selectedClasses].some(c=>classInRange(c, s.classRange));
@@ -2073,7 +2153,7 @@ function render(){
   const filtered = sites.filter(s => matchesClass(s) && (q==='' || s._search.includes(q)));
 
   const groups = new Map();
-  const sortMode = (activeCategory==='gas' || activeCategory==='ore') ? sortSelect.value : 'default';
+  const sortMode = (activeCategory==='gas' || activeCategory==='ore' || activeCategory==='shattered') ? sortSelect.value : 'default';
   if(sortMode!=='default'){
     // One flat list, so the order isn't broken up by class groups
     const keyFn = sortMode==='perm3' ? (s=>siteValue(s).perM3 ?? -1) : (s=>siteValue(s).total);
@@ -2093,6 +2173,7 @@ function render(){
     const cards = list.map(s=>{
       if(activeCategory==='gas') return gasCard(s);
       if(activeCategory==='ore') return oreCard(s);
+      if(activeCategory==='shattered') return shatteredCard(s);
       return waveCard(s, accent, s.class);
     }).join('');
     html += `<div class="group"><p class="group-title">${key}</p><div class="cards">${cards}</div></div>`;
