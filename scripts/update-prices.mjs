@@ -25,6 +25,12 @@ const ITEMS = {
   'Arkonor': 22, 'Bistot': 1223, 'Crokite': 1225, 'Dark Ochre': 1232, 'Gneiss': 1229,
   'Hedbergite': 21, 'Hemorphite': 1231, 'Jaspet': 1226, 'Kernite': 20, 'Mercoxit': 11396,
   'Omber': 1227, 'Pyroxeres': 1224, 'Spodumain': 19,
+  // Shattered-system sites: ore variants and ice (names match the site cards in index.html)
+  'Kernite (Luminous)': 17452, 'Kernite (Fiery)': 17453,
+  'Pyroxeres (Solid)': 17459, 'Pyroxeres (Viscous)': 17460,
+  'Thick Blue Ice': 17975, 'Enriched Clear Icicle': 17978, 'Dark Glitter': 16267,
+  'Gelidus': 16268, 'Smooth Glacial Mass': 17977, 'Glare Crust': 16266,
+  'Krystallos': 16269, 'Pristine White Glaze': 17976,
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
