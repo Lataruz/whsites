@@ -8,6 +8,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const API_BASE = process.env.PRICE_API_BASE || 'https://evetycoon.com/api/v1/market/stats';
 const OUT_PATH = process.env.PRICES_PATH || 'prices.json';
+const APP_PATH = process.env.APP_PATH || 'app.js'; // holds a built-in copy of the prices for when prices.json can't load
 const DELAY_MS = Number(process.env.REQUEST_DELAY_MS ?? 200);
 const MAX_FAILED_FRACTION = 0.1; // give up (and keep the old file) if more than 10% of lookups fail
 
@@ -111,6 +112,25 @@ async function main() {
 
   await writeFile(OUT_PATH, JSON.stringify(out, null, 2) + '\n');
   console.log(`Wrote ${OUT_PATH}: ${lookups - failed}/${lookups} lookups succeeded.`);
+  await updateFallback(out);
+}
+
+// Replace the built-in fallback prices in app.js (between the FALLBACK_START/END markers)
+// with a compact copy of today's prices, so the page still has current values if prices.json
+// fails to load (for example when index.html is opened straight from disk).
+async function updateFallback(out) {
+  const compact = { updated: out.updated, hubs: {} };
+  for (const [key, hub] of Object.entries(out.hubs)) {
+    const items = {};
+    for (const [name, it] of Object.entries(hub.items)) items[name] = { sell: it.sell, orders: it.orders };
+    compact.hubs[key] = { label: hub.label, items };
+  }
+  const src = await readFile(APP_PATH, 'utf8');
+  const re = /\/\*FALLBACK_START\*\/[\s\S]*?\/\*FALLBACK_END\*\//;
+  if (!re.test(src)) throw new Error(`Fallback markers not found in ${APP_PATH}`);
+  const json = JSON.stringify(compact).replace(/</g, '\\u003c');
+  await writeFile(APP_PATH, src.replace(re, () => `/*FALLBACK_START*/${json}/*FALLBACK_END*/`));
+  console.log(`Updated fallback prices in ${APP_PATH}.`);
 }
 
 main().catch((err) => {
