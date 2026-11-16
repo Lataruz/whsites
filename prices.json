@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T05:07:40Z",
+  "updated": "2026-11-16T05:41:20Z",
   "source": "EVE Tycoon regional market stats",
   "method": "sell = average price of the cheapest 5% of sell-order volume (sellAvgFivePercent); min = lowest sell order; null = no sell orders in the region",
   "hubs": {
@@ -9,64 +9,64 @@
       "regionId": 10000002,
       "items": {
         "Fullerite-C28": {
-          "sell": 11700,
-          "min": 11700,
+          "sell": 11652.41,
+          "min": 11650,
           "orders": 60
         },
         "Fullerite-C32": {
-          "sell": 18959.98,
-          "min": 18800,
-          "orders": 79
-        },
-        "Fullerite-C50": {
-          "sell": 7605.88,
-          "min": 7599,
-          "orders": 49
-        },
-        "Fullerite-C60": {
-          "sell": 5485.93,
-          "min": 4997,
-          "orders": 76
-        },
-        "Fullerite-C70": {
-          "sell": 10098.75,
-          "min": 9388,
-          "orders": 64
-        },
-        "Fullerite-C72": {
-          "sell": 6586.97,
-          "min": 6500,
+          "sell": 19805.39,
+          "min": 18970,
           "orders": 63
         },
+        "Fullerite-C50": {
+          "sell": 7591.23,
+          "min": 7549,
+          "orders": 46
+        },
+        "Fullerite-C60": {
+          "sell": 5664.48,
+          "min": 5299,
+          "orders": 69
+        },
+        "Fullerite-C70": {
+          "sell": 10257.34,
+          "min": 9900,
+          "orders": 55
+        },
+        "Fullerite-C72": {
+          "sell": 6577.35,
+          "min": 6568,
+          "orders": 68
+        },
         "Fullerite-C84": {
-          "sell": 9432.94,
-          "min": 9300,
-          "orders": 25
+          "sell": 9450,
+          "min": 9450,
+          "orders": 26
         },
         "Fullerite-C320": {
-          "sell": 34932.53,
-          "min": 34900,
-          "orders": 53
+          "sell": 35884.97,
+          "min": 35870,
+          "orders": 55
         },
         "Fullerite-C540": {
-          "sell": 50983.57,
-          "min": 49300,
-          "orders": 61
+          "sell": 53230.25,
+          "min": 52990,
+          "orders": 48
         },
         "Arkonor": {
-          "sell": 3081.55,
+          "sell": 3082.07,
           "min": 2400,
-          "orders": 29
+          "orders": 28
         },
         "Bistot": {
-          "sell": 2227.21,
+          "sell": 2226.72,
           "min": 2020,
           "orders": 9
         },
         "Crokite": {
-          "sell": 5000,
+          "sell": 5282.35,
           "min": 5000,
-          "orders": 2
+          "orders": 4
         },
         "Dark Ochre": {
           "sell": 4250,
@@ -74,29 +74,29 @@
           "orders": 1
         },
         "Gneiss": {
-          "sell": 2298,
-          "min": 2298,
-          "orders": 5
+          "sell": 2000,
+          "min": 2000,
+          "orders": 6
         },
         "Hedbergite": {
           "sell": 850,
           "min": 850,
-          "orders": 5
+          "orders": 4
         },
         "Hemorphite": {
-          "sell": 930,
-          "min": 930,
-          "orders": 31
+          "sell": 1016.33,
+          "min": 1000,
+          "orders": 30
         },
         "Jaspet": {
-          "sell": 399.75,
-          "min": 392,
-          "orders": 15
+          "sell": 378.71,
+          "min": 256.2,
+          "orders": 18
         },
         "Kernite": {
-          "sell": 546.75,
+          "sell": 546.08,
           "min": 517,
-          "orders": 102
+          "orders": 97
         },
         "Mercoxit": {
           "sell": 26600,
@@ -104,14 +104,14 @@
           "orders": 5
         },
         "Omber": {
-          "sell": 154.36,
+          "sell": 151.48,
           "min": 100,
           "orders": 79
         },
         "Pyroxeres": {
-          "sell": 34.99,
-          "min": 23.79,
-          "orders": 6
+          "sell": 34.1,
+          "min": 30.03,
+          "orders": 4
         },
         "Spodumain": {
           "sell": 10500,
@@ -119,9 +119,9 @@
           "orders": 9
         },
         "Kernite (Luminous)": {
-          "sell": 192.1,
-          "min": 192.1,
-          "orders": 5
+          "sell": 497,
+          "min": 497,
+          "orders": 4
         },
         "Kernite (Fiery)": {
           "sell": 450,
@@ -129,14 +129,14 @@
           "orders": 6
         },
         "Pyroxeres (Solid)": {
-          "sell": 29,
-          "min": 29,
-          "orders": 9
+          "sell": 28.98,
+          "min": 28.5,
+          "orders": 10
         },
         "Pyroxeres (Viscous)": {
           "sell": 30,
-          "min": 30,
-          "orders": 9
+          "min": 29.5,
+          "orders": 11
         },
         "Thick Blue Ice": {
           "sell": null,
@@ -156,7 +156,7 @@
         "Gelidus": {
           "sell": 1499000,
           "min": 1499000,
-          "orders": 1
+          "orders": 2
         },
         "Smooth Glacial Mass": {
           "sell": null,
@@ -186,54 +186,54 @@
       "regionId": 10000043,
       "items": {
         "Fullerite-C28": {
-          "sell": 12158.17,
-          "min": 12150,
-          "orders": 14
+          "sell": 11472.31,
+          "min": 11470,
+          "orders": 16
         },
         "Fullerite-C32": {
-          "sell": 19040,
-          "min": 19040,
-          "orders": 22
+          "sell": 20626.49,
+          "min": 20360,
+          "orders": 18
         },
         "Fullerite-C50": {
-          "sell": 6978.34,
-          "min": 6976,
-          "orders": 41
+          "sell": 6983.58,
+          "min": 6980,
+          "orders": 26
         },
         "Fullerite-C60": {
-          "sell": 6433.84,
-          "min": 6331,
-          "orders": 29
+          "sell": 6118.8,
+          "min": 6118,
+          "orders": 30
         },
         "Fullerite-C70": {
-          "sell": 8974.35,
-          "min": 8973,
-          "orders": 24
-        },
-        "Fullerite-C72": {
-          "sell": 5699.7,
-          "min": 5699,
-          "orders": 45
-        },
-        "Fullerite-C84": {
-          "sell": 7959.24,
-          "min": 7850,
+          "sell": 8498.19,
+          "min": 8497,
           "orders": 28
         },
-        "Fullerite-C320": {
-          "sell": 36233.94,
-          "min": 35000,
+        "Fullerite-C72": {
+          "sell": 5939.26,
+          "min": 5939,
           "orders": 36
         },
+        "Fullerite-C84": {
+          "sell": 8372.73,
+          "min": 8350,
+          "orders": 26
+        },
+        "Fullerite-C320": {
+          "sell": 34993.16,
+          "min": 34980,
+          "orders": 37
+        },
         "Fullerite-C540": {
-          "sell": 50480,
-          "min": 48000,
+          "sell": 51992.22,
+          "min": 50000,
           "orders": 16
         },
         "Arkonor": {
-          "sell": 3389.73,
-          "min": 2204,
-          "orders": 4
+          "sell": 4000,
+          "min": 4000,
+          "orders": 3
         },
         "Bistot": {
           "sell": 3849,
@@ -246,9 +246,9 @@
           "orders": 2
         },
         "Dark Ochre": {
-          "sell": null,
-          "min": null,
-          "orders": 0
+          "sell": 4600,
+          "min": 4600,
+          "orders": 1
         },
         "Gneiss": {
           "sell": null,
@@ -256,9 +256,9 @@
           "orders": 0
         },
         "Hedbergite": {
-          "sell": 600,
-          "min": 600,
-          "orders": 4
+          "sell": 840,
+          "min": 840,
+          "orders": 3
         },
         "Hemorphite": {
           "sell": 890,
@@ -271,9 +271,9 @@
           "orders": 3
         },
         "Kernite": {
-          "sell": 496.72,
-          "min": 479.9,
-          "orders": 55
+          "sell": 458.87,
+          "min": 449.9,
+          "orders": 61
         },
         "Mercoxit": {
           "sell": 24410,
@@ -281,8 +281,8 @@
           "orders": 1
         },
         "Omber": {
-          "sell": 137.88,
-          "min": 137.5,
+          "sell": 130.91,
+          "min": 114.9,
           "orders": 44
         },
         "Pyroxeres": {
@@ -296,24 +296,24 @@
           "orders": 3
         },
         "Kernite (Luminous)": {
-          "sell": 135,
-          "min": 135,
-          "orders": 5
+          "sell": 107.3,
+          "min": 107.3,
+          "orders": 4
         },
         "Kernite (Fiery)": {
-          "sell": 213.99,
+          "sell": 214.49,
           "min": 150,
-          "orders": 11
+          "orders": 8
         },
         "Pyroxeres (Solid)": {
-          "sell": 23.96,
-          "min": 23.96,
-          "orders": 7
+          "sell": 23.83,
+          "min": 23.83,
+          "orders": 9
         },
         "Pyroxeres (Viscous)": {
-          "sell": 25.95,
-          "min": 25.74,
-          "orders": 13
+          "sell": 25.9,
+          "min": 24,
+          "orders": 17
         },
         "Thick Blue Ice": {
           "sell": null,
@@ -365,37 +365,37 @@
         "Fullerite-C28": {
           "sell": 12500,
           "min": 12500,
-          "orders": 14
+          "orders": 15
         },
         "Fullerite-C32": {
-          "sell": 19900,
-          "min": 19900,
-          "orders": 11
+          "sell": 18800,
+          "min": 18800,
+          "orders": 14
         },
         "Fullerite-C50": {
-          "sell": 7430.98,
-          "min": 7400,
-          "orders": 11
+          "sell": 6498.55,
+          "min": 6498,
+          "orders": 12
         },
         "Fullerite-C60": {
-          "sell": 4490,
-          "min": 4490,
-          "orders": 13
+          "sell": 4700,
+          "min": 4700,
+          "orders": 11
         },
         "Fullerite-C70": {
-          "sell": 10380,
-          "min": 10380,
+          "sell": 9000,
+          "min": 9000,
           "orders": 16
         },
         "Fullerite-C72": {
-          "sell": 6039.02,
-          "min": 6000,
-          "orders": 24
+          "sell": 5242,
+          "min": 5242,
+          "orders": 26
         },
         "Fullerite-C84": {
-          "sell": 8489.86,
-          "min": 8489,
-          "orders": 28
+          "sell": 8118.25,
+          "min": 8100,
+          "orders": 29
         },
         "Fullerite-C320": {
           "sell": 35984.01,
@@ -403,14 +403,14 @@
           "orders": 5
         },
         "Fullerite-C540": {
-          "sell": 57207.69,
+          "sell": 57228.34,
           "min": 56000,
-          "orders": 5
+          "orders": 6
         },
         "Arkonor": {
-          "sell": 3679,
-          "min": 3679,
-          "orders": 6
+          "sell": 3680,
+          "min": 3680,
+          "orders": 5
         },
         "Bistot": {
           "sell": null,
@@ -418,9 +418,9 @@
           "orders": 0
         },
         "Crokite": {
-          "sell": 6100,
-          "min": 6100,
-          "orders": 3
+          "sell": 5944.05,
+          "min": 5900,
+          "orders": 4
         },
         "Dark Ochre": {
           "sell": null,
@@ -435,22 +435,22 @@
         "Hedbergite": {
           "sell": 973.41,
           "min": 900,
-          "orders": 3
+          "orders": 2
         },
         "Hemorphite": {
           "sell": 1000,
           "min": 1000,
-          "orders": 5
+          "orders": 4
         },
         "Jaspet": {
-          "sell": 335.43,
-          "min": 335,
-          "orders": 3
+          "sell": 332,
+          "min": 332,
+          "orders": 4
         },
         "Kernite": {
-          "sell": 664.9,
-          "min": 525,
-          "orders": 38
+          "sell": 664.84,
+          "min": 660,
+          "orders": 34
         },
         "Mercoxit": {
           "sell": null,
@@ -458,13 +458,13 @@
           "orders": 0
         },
         "Omber": {
-          "sell": 164.73,
+          "sell": 155.5,
           "min": 99,
-          "orders": 30
+          "orders": 32
         },
         "Pyroxeres": {
-          "sell": 30,
-          "min": 30,
+          "sell": 52,
+          "min": 52,
           "orders": 1
         },
         "Spodumain": {
@@ -473,19 +473,19 @@
           "orders": 0
         },
         "Kernite (Luminous)": {
-          "sell": 373.19,
+          "sell": 417.11,
           "min": 151.2,
-          "orders": 4
+          "orders": 5
         },
         "Kernite (Fiery)": {
-          "sell": 457.83,
-          "min": 110.4,
-          "orders": 6
+          "sell": 463.33,
+          "min": 193.2,
+          "orders": 7
         },
         "Pyroxeres (Solid)": {
-          "sell": 60,
-          "min": 60,
-          "orders": 1
+          "sell": 46.96,
+          "min": 15.01,
+          "orders": 2
         },
         "Pyroxeres (Viscous)": {
           "sell": 23.02,
@@ -518,9 +518,9 @@
           "orders": 0
         },
         "Glare Crust": {
-          "sell": 500000,
-          "min": 500000,
-          "orders": 1
+          "sell": null,
+          "min": null,
+          "orders": 0
         },
         "Krystallos": {
           "sell": null,
@@ -540,9 +540,9 @@
       "regionId": 10000042,
       "items": {
         "Fullerite-C28": {
-          "sell": 10750,
-          "min": 10750,
-          "orders": 17
+          "sell": 10500,
+          "min": 10500,
+          "orders": 20
         },
         "Fullerite-C32": {
           "sell": 20396.94,
@@ -550,29 +550,29 @@
           "orders": 10
         },
         "Fullerite-C50": {
-          "sell": 7450,
-          "min": 7450,
-          "orders": 5
+          "sell": 6800,
+          "min": 6800,
+          "orders": 7
         },
         "Fullerite-C60": {
-          "sell": 5850,
-          "min": 5850,
-          "orders": 4
+          "sell": 4800,
+          "min": 4800,
+          "orders": 5
         },
         "Fullerite-C70": {
-          "sell": 8999,
-          "min": 8999,
-          "orders": 3
+          "sell": 8654.14,
+          "min": 8600,
+          "orders": 7
         },
         "Fullerite-C72": {
-          "sell": 6240.92,
-          "min": 6200,
-          "orders": 13
+          "sell": 6000,
+          "min": 6000,
+          "orders": 14
         },
         "Fullerite-C84": {
-          "sell": 7875.58,
-          "min": 7507,
-          "orders": 27
+          "sell": 7925.85,
+          "min": 7899,
+          "orders": 25
         },
         "Fullerite-C320": {
           "sell": 37000,
@@ -605,9 +605,9 @@
           "orders": 1
         },
         "Gneiss": {
-          "sell": 1360.57,
-          "min": 1000,
-          "orders": 3
+          "sell": 1390,
+          "min": 1390,
+          "orders": 4
         },
         "Hedbergite": {
           "sell": null,
@@ -625,39 +625,39 @@
           "orders": 3
         },
         "Kernite": {
-          "sell": 572.62,
+          "sell": 569.9,
           "min": 500,
-          "orders": 69
+          "orders": 81
         },
         "Mercoxit": {
-          "sell": 19000,
-          "min": 19000,
-          "orders": 1
+          "sell": 18000,
+          "min": 18000,
+          "orders": 2
         },
         "Omber": {
-          "sell": 98,
-          "min": 94.9,
-          "orders": 39
+          "sell": 86.16,
+          "min": 62.03,
+          "orders": 42
         },
         "Pyroxeres": {
-          "sell": 87.83,
-          "min": 70,
-          "orders": 5
+          "sell": 88.99,
+          "min": 88.99,
+          "orders": 6
         },
         "Spodumain": {
-          "sell": null,
-          "min": null,
-          "orders": 0
+          "sell": 6000,
+          "min": 6000,
+          "orders": 1
         },
         "Kernite (Luminous)": {
-          "sell": 176.78,
+          "sell": 154.79,
           "min": 150.5,
-          "orders": 5
+          "orders": 6
         },
         "Kernite (Fiery)": {
           "sell": 1.05,
           "min": 1.05,
-          "orders": 4
+          "orders": 5
         },
         "Pyroxeres (Solid)": {
           "sell": null,
@@ -665,14 +665,14 @@
           "orders": 0
         },
         "Pyroxeres (Viscous)": {
-          "sell": 20.44,
-          "min": 20.44,
-          "orders": 1
-        },
-        "Thick Blue Ice": {
           "sell": null,
           "min": null,
           "orders": 0
+        },
+        "Thick Blue Ice": {
+          "sell": 144.5,
+          "min": 144.5,
+          "orders": 1
         },
         "Enriched Clear Icicle": {
           "sell": null,
@@ -700,9 +700,9 @@
           "orders": 1
         },
         "Krystallos": {
-          "sell": 460000,
-          "min": 460000,
-          "orders": 2
+          "sell": 200000,
+          "min": 200000,
+          "orders": 3
         },
         "Pristine White Glaze": {
           "sell": null,
